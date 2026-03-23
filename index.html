@@ -1,29 +1,3 @@
-<script>
-document.addEventListener('contextmenu', e => e.preventDefault());
-</script>
-
-<script>
-document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
-};
-</script>
-
-<script>
-document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
-};
-</script>
-
-<script>
-eval(function(p,a,c,k,e,d){...})
-</script>
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -221,6 +195,33 @@ iframe{width:100%;height:180px;border-radius:10px;}
 
 <body>
 
+<script>
+//  Bloquear clic derecho
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+//  Bloquear teclas comunes
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) return false; // F12
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false; // Ctrl+Shift+J
+  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+};
+
+//  Anti-inspección (detecta DevTools)
+setInterval(function() {
+  const devtools = /./;
+  devtools.toString = function() {
+    document.body.innerHTML = "<h1 style='text-align:center;margin-top:20%;'>Acceso restringido</h1>";
+  };
+  console.log(devtools);
+}, 1000);
+
+//  Deshabilitar selección de texto
+document.body.style.userSelect = "none";
+</script>
+
+
+  
 <!-- NAVBAR -->
 <div class="navbar">
   <strong>Instituto Pacelli</strong>
