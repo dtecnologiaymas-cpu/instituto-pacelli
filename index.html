@@ -1,3 +1,29 @@
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+</script>
+
+<script>
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) return false; // F12
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
+  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+};
+</script>
+
+<script>
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) return false; // F12
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl+Shift+I
+  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+};
+</script>
+
+<script>
+eval(function(p,a,c,k,e,d){...})
+</script>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
